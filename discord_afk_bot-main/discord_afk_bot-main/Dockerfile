@@ -2,12 +2,13 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-# Install dependencies first (layer caching)
+# discord-native-voice declares discord.py-self>=2.2.0, but only 2.2.0a0 (GitHub master)
+# exists, so pip's resolver rejects it. Install it separately with --no-deps.
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt \
+ && pip install --no-cache-dir --no-deps discord-native-voice
 
-# Copy bot source
 COPY . .
 
-# -u = unbuffered stdout so logs appear in docker logs immediately
+# -u = unbuffered stdout so logs appear immediately
 CMD ["python", "-u", "bot.py"]
