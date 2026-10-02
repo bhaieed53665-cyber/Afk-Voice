@@ -1,2 +1,2 @@
-discord.py-self>=1.9.2
-PyNaCl>=1.5.0
+discord.py-self>=2.1.0
+discord-native-voice>=0.1.1
