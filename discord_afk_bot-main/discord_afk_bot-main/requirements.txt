@@ -1,1 +1,2 @@
-discord.py[voice]>=2.7.1
+discord.py-self>=2.1.0
+discord-native-voice>=0.1.1
