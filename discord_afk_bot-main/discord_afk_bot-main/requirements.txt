@@ -1,2 +1,1 @@
-discord.py-self>=2.1.0
-discord-native-voice>=0.1.1
+discord.py-self[voice] @ https://github.com/dolfies/discord.py-self/archive/refs/heads/master.zip
